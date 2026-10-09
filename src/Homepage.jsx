@@ -322,7 +322,9 @@ function GradientText({ text, tone = 'dark' }) {
       <span
         key={i}
         className={`bg-gradient-to-r bg-clip-text text-transparent ${
-          tone === 'dark' ? 'from-white to-accentSoft' : 'from-ink to-accent'
+          tone === 'dark'
+            ? 'from-white to-[#3D7BFF] [text-shadow:none] [filter:drop-shadow(0_2px_8px_rgba(5,5,10,0.8))]'
+            : 'from-ink to-accent'
         }`}
       >
         {p.replace(/\*/g, '')}
@@ -344,7 +346,9 @@ function RisingWords({ text }) {
       <span key={i}>
         <span
           className={`inline-block will-change-transform ${
-            grad ? 'bg-gradient-to-r from-white to-accentSoft bg-clip-text text-transparent' : ''
+            grad
+              ? 'bg-gradient-to-r from-white to-[#3D7BFF] bg-clip-text text-transparent [text-shadow:none] [filter:drop-shadow(0_2px_8px_rgba(5,5,10,0.8))]'
+              : ''
           }`}
           style={{
             '--th': (i / total) * 0.55,
